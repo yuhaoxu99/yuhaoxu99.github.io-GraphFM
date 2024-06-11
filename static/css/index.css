@@ -2,11 +2,28 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-
 .footer .icon-link {
     font-size: 25px;
     color: #000;
 }
+
+.resized-image {
+  width: 50%; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure the images are displayed as block elements */
+  margin: 0 auto; /* Center the images */
+}
+
+.resized-effimage {
+  width: 100%; /* Make the image take the full width of its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.resized-seffimage {
+  width: 150%; /* Make the image take the full width of its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
 
 .link-block a {
     margin-top: 5px;
@@ -136,6 +153,13 @@ body {
 .interpolation-panel .interpolation-image {
   width: 100%;
   border-radius: 5px;
+}
+
+.custom-icon {
+  height: 60px; /* Adjust the height as needed */
+  width: auto; /* Maintain aspect ratio */
+  vertical-align: middle; /* Align the image vertically with the text */
+  margin-right: 10px; /* Space between the image and the text */
 }
 
 .interpolation-video-column {
