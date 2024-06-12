@@ -95,7 +95,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://drive.google.com/file/d/1j5Ln5X8Y7u8QiZIYoq15e_SD_DXJG3fO/view?usp=share_link"
+                <a href="./static/images/NeurIPS24_GraphFMBenchmark.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -171,18 +171,18 @@
           <p>
             After training GSSL to obtain node representations, <i>GraphFM</i> evaluates three downstream tasks simultaneously: node classification, link prediction, and node clustering.
           </p>
-          <img src="./static/images/full_batch/acc.png" class="interpolation-image resized-image" alt="Interpolate start reference image."/>
-          <p>
-            Thanks to the standardized settings, our reproduced results on full-batch training are generally comparable to or sometimes even higher than those in the original paper.
-          </p>
-          <img src="./static/images/full_batch/auc.png" class="interpolation-image resized-image" alt="Interpolate start reference image."/>
-          <p>
-            Generative models (GraphMAE and GraphMAE2) perform poorly on link prediction tasks.
-          </p>
-          <img src="./static/images/full_batch/nmi.png" class="interpolation-image resized-image" alt="Interpolate start reference image."/>
-          <p>
-            Although generative models (GraphMAE and GraphMAE2) fall short in link prediction, they outperform other baselines in node clustering tasks.
-          </p>
+          <div class="has-text-centered">
+            <img src="./static/images/full_batch/acc.png" class="interpolation-image resized-image" alt="Interpolate start reference image."/>
+            <p>Node Classification results on Cora, Citeseer, Pubmed based on full batch training.</p>
+          </div>
+          <div class="has-text-centered">
+            <img src="./static/images/full_batch/auc.png" class="interpolation-image resized-image" alt="Interpolate start reference image."/>
+            <p>Link Prediction results on Cora, Citeseer, Pubmed based on full batch training.</p>
+          </div>
+          <div class="has-text-centered">
+            <img src="./static/images/full_batch/nmi.png" class="interpolation-image resized-image" alt="Interpolate start reference image."/>
+            <p>Node Clustering results on Cora, Citeseer, Pubmed based on full batch training.</p>
+          </div>
         </div>
       </div>
       <!--/ Visual Effects. -->
@@ -191,14 +191,27 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Scalability</h2>
-          <img src="./static/images/scalability/ns_pubmed.png"
-           class="interpolation-image  has-text-centered"
-           alt="Interpolate start reference image."/>
-          <p>The result of <i>GraphFM</i> in Pubmed dataset with node sampling training strategy.</p>
-          <img src="./static/images/scalability/ss_pubmed.png"
-           class="interpolation-image  has-text-centered"
-           alt="Interpolate start reference image."/>
-          <p>The result of <i>GraphFM</i> in Pubmed dataset with subgraph sampling training strategy.</p>
+        <p>
+          To investigate the scalability of the Graph Foundation Model, <i>GraphFM</i> conduct experiments on both small and large-scale datasets using a sampling method.
+        </p>
+          <div class="has-text-centered">
+            <img src="./static/images/scalability/ns_pubmed.png"
+            class="interpolation-image resized-image"
+            alt="Interpolate start reference image."/>
+            <p>The result of <i>GraphFM</i> in Pubmed dataset with node sampling training strategy.</p>
+          </div>
+          <div class="has-text-centered">
+            <img src="./static/images/scalability/ss_pubmed.png"
+            class="interpolation-image resized-image"
+            alt="Interpolate start reference image."/>
+            <p>The result of <i>GraphFM</i> in Pubmed dataset with subgraph sampling training strategy.</p>
+          </div>
+          <div class="has-text-centered">
+            <img src="./static/images/scalability/flickr.png"
+            class="interpolation-image resized-image"
+            alt="Interpolate start reference image."/>
+            <p>The result of <i>GraphFM</i> in Flickr dataset.</p>
+          </div>
       </div>
     </div>
 
@@ -207,6 +220,9 @@
       <div class="column">
         <div class="content">
           <h2 class="title is-3">Efficiency</h2>
+          <p>
+            To understand the training speed and memory usage of the GSSL methods using different sampling strategies, we report throughput and actual memory usage during training.
+          </p>
           <div class="columns is-centered">
             <div class="column is-one-third has-text-centered">
               <img src="./static/images/efficiency/cora_mem.png" class="interpolation-image resized-seffimage" alt="Interpolate start reference image."/>
@@ -243,9 +259,14 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Training Stop Criteria</h2>
-          <img src="./static/images/stop_criteria/Flickr.png"
-           class="interpolation-image"
-           alt="Interpolate start reference image."/>
+        <p>
+          <i>GraphFM</i> explore the viability of saving pre-trained models based on their results across different downstream tasks, such as link prediction.
+        </p>
+        <div class="has-text-centered">
+          <img src="./static/images/stop_criteria/Flickr.png" class="interpolation-image resized-image" alt="Interpolate start reference image."/>
+          <p>The result of <i>GraphFM</i> in Flickr dataset by saving valid model with the best performance
+            in link prediction.</p>
+        </div>
       </div>
     </div>
   </div>
